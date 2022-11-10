@@ -58,7 +58,7 @@ def count_b(A, main_diag):
 def check(A, x):
     return [sum([A[i][j] * x[j] for j in range(n)]) for i in range(n)]
 
-
+'''
 v = 7  # номер варианта
 n = 5  # размерность матрицы
 
@@ -89,3 +89,4 @@ new_b = check(A, x)
 
 for c in new_b:
     print(f'{c: >5.2f}')
+'''
