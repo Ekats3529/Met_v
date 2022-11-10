@@ -21,4 +21,4 @@ for i in range(4):
     print(i, L(i, 3))
 
 
-print()
+print(1)
