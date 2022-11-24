@@ -13,12 +13,13 @@ def L(x, n):
     return ans
 
 
+print("\nLagrange method\n")
+
 k = 0.5
 for i in range(3):
-    print(k + i, L(k + i, 3))
+    print(f"f({k + i}): {L(k + i, 3)}")
+
+print()
 
 for i in range(4):
-    print(i, L(i, 3))
-
-
-print(1)
+    print(f"f({i}): {L(i, 3)}")

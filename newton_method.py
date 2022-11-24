@@ -19,10 +19,12 @@ def N(x, n):
     return ans
 
 
-
+print("\nNewton method\n")
 k = 0.5
 for i in range(3):
-    print(k + i, N(k + i, 3))
+    print(f"f({k + i}): {N(k + i, 3)}")
+
+print()
 
 for i in range(4):
-    print(i, N(i, 3))
+    print(f"f({i}): {N(i, 3)}")
