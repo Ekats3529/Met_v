@@ -1,7 +1,7 @@
 V = 7
 x_0 = V
 y_0 = 0
-h = 0.1
+h = 0.5
 lft = V
 rgt = V + 5
 eps = 1e-9

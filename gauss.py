@@ -1,7 +1,6 @@
-# метод Гаусса
+
 def method_Gauss(A, b):
     n = len(A)
-    # формируем матрицу, с которой будем работать
     res = []
     for i in range(n):
         cur_lst = [A[i][j] for j in range(n)]
@@ -9,28 +8,35 @@ def method_Gauss(A, b):
         res.append(cur_lst)
 
     # прямой ход
-    # внешний цикл по строкам, с которыми работаем
     for i in range(n):
         # запоминаем первый ненулевой элемент строки i
         elem = res[i][i]
+
+        # меняем строки, если диагональный элемент == 0
+        if elem == 0:
+            max_d = elem
+            m = i
+            for j in range(i + 1, n):
+                if abs(res[j][i]) > max_d:
+                    max_d = abs(res[j][i])
+                    m = j
+            res[i], res[m] = res[m], res[i]
+            elem = res[i][i]
+
         # делим текущую (i-ю) строку на её первый ненулевой элемент
         for j in range(i, n + 1):
             res[i][j] /= elem
 
         # цикл по оставшимся строкам матрицы
         for k in range(i + 1, n):
-            # запоминаем первый ненулевой элемент строки k
             elem = res[k][i]
-            # вычитаем из строки k i-ю, домноженную на первый ненулевой элемент строки k
             for j in range(i, n + 1):
                 res[k][j] -= res[i][j] * elem
 
     # обратный ход
     x = []
     for i in range(n):
-        # кладем в x_cur i-е значение столбца b
         x_cur = res[n - i - 1][n]
-        # вычитаем произведения элементов матрицы A на посчитанные иксы
         for j in range(i):
             x_cur -= res[n - i - 1][n - j - 1] * x[j]
         x.append(x_cur)

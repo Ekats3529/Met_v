@@ -1,5 +1,5 @@
-import gauss
 import numpy as np
+import gauss
 
 X = [0, 1, 2, 3]
 Y = [5, 6, 9, 13]
@@ -53,8 +53,7 @@ for c in b:
 
 print()
 
-# x = gauss.method_Gauss(A, b)  # решаем систему Ax = b
-solution = np.linalg.solve(np.array(A), np.array(b))
+solution = gauss.method_Gauss(A, b)  # решаем систему Ax = b
 
 print("Решение СЛАУ:")
 

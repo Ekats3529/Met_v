@@ -16,3 +16,4 @@ print()
 
 for i in range(4):
     print(f"f({i}): {y(i)}")
+

@@ -1,11 +1,11 @@
-import numpy as np
+import gauss
 
 V = 7
 x_0 = 0
 x_T = V
 y_0 = 0
 y_T = 0
-h = 0.1
+h = 0.5
 eps = 1e-9
 
 
@@ -77,7 +77,7 @@ cur_lst = [0] * n + [1]
 A.append(cur_lst)  # последняя строка матрицы A - коэф. 1 при y_n и 0 при остальных y
 b.append(0)  # последнее значение столбца b равно 0
 
-y_dif = list(np.linalg.solve(np.array(A), np.array(b)))
+y_dif = gauss.method_Gauss(A, b)
 e = [abs(y_dif[i] - y_ex[i]) for i in range(n + 1)]
 
 print(f'{"Разностный метод": ^63}\n')
